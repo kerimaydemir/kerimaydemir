@@ -1,0 +1,125 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Kerim Aydemir animated GitHub profile hero</title>
+  <desc id="desc">A premium animated hero banner for AI products, LegalTech and automation.</desc>
+  <style>
+    .grid {
+      animation: drift 16s linear infinite;
+      opacity: .28;
+    }
+    .scan {
+      animation: scan 5.5s ease-in-out infinite;
+      opacity: .22;
+    }
+    .pulse {
+      animation: pulse 2.8s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .float-a {
+      animation: floatA 7s ease-in-out infinite;
+    }
+    .float-b {
+      animation: floatB 8s ease-in-out infinite;
+    }
+    .stroke-dash {
+      stroke-dasharray: 10 18;
+      animation: dash 18s linear infinite;
+    }
+    .caret {
+      animation: blink 1s steps(2, start) infinite;
+    }
+    @keyframes drift {
+      from { transform: translateX(0); }
+      to { transform: translateX(-80px); }
+    }
+    @keyframes scan {
+      0%, 100% { transform: translateY(-150px); }
+      50% { transform: translateY(190px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: .55; transform: scale(.98); }
+      50% { opacity: 1; transform: scale(1.04); }
+    }
+    @keyframes floatA {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(22px, -18px); }
+    }
+    @keyframes floatB {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-18px, 24px); }
+    }
+    @keyframes dash {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: -360; }
+    }
+    @keyframes blink {
+      0%, 45% { opacity: 1; }
+      46%, 100% { opacity: 0; }
+    }
+  </style>
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#17324D"/>
+      <stop offset="42%" stop-color="#0A1420"/>
+      <stop offset="100%" stop-color="#03070D"/>
+    </radialGradient>
+    <linearGradient id="aurora" x1="80" y1="60" x2="1120" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EEAD4"/>
+      <stop offset=".34" stop-color="#EAB308"/>
+      <stop offset=".68" stop-color="#F97316"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EEAD4" stop-opacity="0"/>
+      <stop offset=".2" stop-color="#5EEAD4"/>
+      <stop offset=".5" stop-color="#FACC15"/>
+      <stop offset=".8" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.1  0 1 0 0 0.9  0 0 1 0 0.85  0 0 0 .8 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="gridPattern" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" stroke="#9CA3AF" stroke-opacity=".24" stroke-width="1"/>
+      <circle cx="0" cy="0" r="1.4" fill="#E5E7EB" fill-opacity=".34"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="420" rx="28" fill="url(#bgGlow)"/>
+  <rect class="grid" x="-80" y="0" width="1360" height="420" fill="url(#gridPattern)"/>
+  <path class="stroke-dash" d="M45 323C189 247 272 369 418 282C578 186 643 243 769 170C907 90 1006 136 1154 72" stroke="url(#aurora)" stroke-width="3" stroke-linecap="round" opacity=".62"/>
+  <path class="stroke-dash" d="M64 366C240 286 318 354 460 314C606 273 633 167 801 211C918 242 1020 247 1144 154" stroke="url(#line)" stroke-width="2" stroke-linecap="round" opacity=".48"/>
+
+  <g class="float-a" filter="url(#softGlow)">
+    <circle cx="972" cy="133" r="90" stroke="#5EEAD4" stroke-opacity=".5"/>
+    <circle cx="972" cy="133" r="55" stroke="#FACC15" stroke-opacity=".35"/>
+    <circle class="pulse" cx="972" cy="133" r="12" fill="#FACC15"/>
+    <path d="M911 133C911 99.3 938.3 72 972 72C1005.7 72 1033 99.3 1033 133C1033 166.7 1005.7 194 972 194C938.3 194 911 166.7 911 133Z" stroke="#38BDF8" stroke-width="2" stroke-dasharray="7 10"/>
+  </g>
+
+  <g class="float-b" opacity=".96">
+    <rect x="785" y="248" width="300" height="88" rx="18" fill="#07111E" stroke="#5EEAD4" stroke-opacity=".28"/>
+    <text x="812" y="282" fill="#9CA3AF" font-family="SFMono-Regular, Consolas, monospace" font-size="15">$ build --focus</text>
+    <text x="812" y="310" fill="#5EEAD4" font-family="SFMono-Regular, Consolas, monospace" font-size="17">legal-ai + agents + ux</text>
+    <rect class="caret" x="1048" y="296" width="9" height="21" rx="2" fill="#FACC15"/>
+  </g>
+
+  <rect class="scan" x="0" y="0" width="1200" height="80" fill="url(#line)"/>
+  <rect x="34" y="34" width="1132" height="352" rx="24" stroke="url(#aurora)" stroke-opacity=".26"/>
+
+  <text x="74" y="125" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="20" letter-spacing="5">AI PRODUCTS / LEGALTECH / AUTOMATION</text>
+  <text x="72" y="207" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800">Kerim Aydemir</text>
+  <text x="76" y="256" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="25">Building focused systems where product taste meets engineering discipline.</text>
+  <g transform="translate(76 292)">
+    <rect width="174" height="44" rx="14" fill="#0B1726" stroke="#5EEAD4" stroke-opacity=".35"/>
+    <text x="21" y="29" fill="#5EEAD4" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Legal AI</text>
+    <rect x="190" width="150" height="44" rx="14" fill="#0B1726" stroke="#FACC15" stroke-opacity=".36"/>
+    <text x="211" y="29" fill="#FACC15" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Agents</text>
+    <rect x="356" width="184" height="44" rx="14" fill="#0B1726" stroke="#38BDF8" stroke-opacity=".36"/>
+    <text x="377" y="29" fill="#38BDF8" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Automation</text>
+  </g>
+</svg>

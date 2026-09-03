@@ -1,0 +1,55 @@
+<svg width="900" height="360" viewBox="0 0 900 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Animated product orbit</title>
+  <desc id="desc">Legal AI, product systems, automation and research orbit around a focused builder core.</desc>
+  <style>
+    .ring { stroke-dasharray: 8 14; animation: dash 20s linear infinite; }
+    .ring-alt { stroke-dasharray: 4 12; animation: dashReverse 18s linear infinite; }
+    .node { animation: breathe 3.6s ease-in-out infinite; transform-origin: center; }
+    .node2 { animation-delay: .7s; }
+    .node3 { animation-delay: 1.4s; }
+    .node4 { animation-delay: 2.1s; }
+    @keyframes dash { to { stroke-dashoffset: -320; } }
+    @keyframes dashReverse { to { stroke-dashoffset: 260; } }
+    @keyframes breathe { 0%,100% { opacity: .72; transform: scale(.98); } 50% { opacity: 1; transform: scale(1.06); } }
+  </style>
+  <defs>
+    <linearGradient id="ring" x1="140" y1="70" x2="760" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EEAD4"/>
+      <stop offset=".5" stop-color="#FACC15"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="360" rx="24" fill="#03070D"/>
+  <ellipse class="ring" cx="450" cy="180" rx="340" ry="116" stroke="url(#ring)" stroke-width="2" opacity=".58"/>
+  <ellipse class="ring-alt" cx="450" cy="180" rx="230" ry="160" stroke="url(#ring)" stroke-width="2" opacity=".4"/>
+  <ellipse class="ring-alt" cx="450" cy="180" rx="128" ry="94" stroke="#CBD5E1" stroke-width="1" opacity=".22"/>
+  <g filter="url(#glow)">
+    <circle cx="450" cy="180" r="44" fill="#101B2B" stroke="#FACC15"/>
+    <text x="450" y="174" text-anchor="middle" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800">KERIM</text>
+    <text x="450" y="197" text-anchor="middle" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="12">builder core</text>
+  </g>
+  <g class="node">
+    <circle cx="151" cy="181" r="36" fill="#07111E" stroke="#5EEAD4"/>
+    <text x="151" y="176" text-anchor="middle" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Legal</text>
+    <text x="151" y="195" text-anchor="middle" fill="#5EEAD4" font-family="Inter, Arial, sans-serif" font-size="12">AI</text>
+  </g>
+  <g class="node node2">
+    <circle cx="686" cy="77" r="38" fill="#07111E" stroke="#FACC15"/>
+    <text x="686" y="75" text-anchor="middle" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Product</text>
+    <text x="686" y="94" text-anchor="middle" fill="#FACC15" font-family="Inter, Arial, sans-serif" font-size="12">taste</text>
+  </g>
+  <g class="node node3">
+    <circle cx="726" cy="255" r="38" fill="#07111E" stroke="#38BDF8"/>
+    <text x="726" y="253" text-anchor="middle" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Agents</text>
+    <text x="726" y="272" text-anchor="middle" fill="#38BDF8" font-family="Inter, Arial, sans-serif" font-size="12">systems</text>
+  </g>
+  <g class="node node4">
+    <circle cx="266" cy="87" r="36" fill="#07111E" stroke="#FB923C"/>
+    <text x="266" y="85" text-anchor="middle" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Research</text>
+    <text x="266" y="104" text-anchor="middle" fill="#FB923C" font-family="Inter, Arial, sans-serif" font-size="12">loops</text>
+  </g>
+</svg>
