@@ -1,17 +1,11 @@
 <div align="center">
-  <img src="./assets/hero.gif" alt="Miron Group wolf mark" width="100%" />
+  <img src="./assets/hero.gif" alt="Wolf mark" width="100%" />
 </div>
-
-<img src="./assets/divider.svg" alt="" width="100%" />
 
 <div align="center">
-  <sub>
-    <a href="https://github.com/kerimaydemir/miron-method">miron-method</a>
-    &nbsp;&nbsp;/&nbsp;&nbsp;
-    <a href="https://github.com/kerimaydemir/miron-x">miron-x</a>
-    &nbsp;&nbsp;/&nbsp;&nbsp;
-    <a href="https://github.com/kerimaydemir/kurtlarr">kurtlarr</a>
-  </sub>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kerimaydemir/kerimaydemir/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kerimaydemir/kerimaydemir/output/github-snake.svg" />
+    <img alt="Animated contribution graph" src="https://raw.githubusercontent.com/kerimaydemir/kerimaydemir/output/github-snake-dark.svg" width="100%" />
+  </picture>
 </div>
-
-<br />
