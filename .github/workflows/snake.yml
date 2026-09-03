@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: Checkout profile source
+        uses: actions/checkout@v4
+
       - name: Generate snake SVGs
         uses: Platane/snk/svg-only@v3
         with:
@@ -21,69 +24,8 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-      - name: Amplify contribution cells
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-
-          def amplify(path):
-              svg = path.read_text()
-              pattern = re.compile(r'<rect class="c(?P<class_extra> [^"]+)?" x="(?P<x>[0-9.]+)" y="(?P<y>[0-9.]+)" rx="2" ry="2"/>')
-              cells = []
-              for i, match in enumerate(pattern.finditer(svg)):
-                  extra = (match.group("class_extra") or "").strip()
-                  cells.append({
-                      "index": i,
-                      "match": match,
-                      "extra": extra,
-                      "x": round(float(match.group("x"))),
-                      "y": round(float(match.group("y"))),
-                  })
-
-              active = [cell for cell in cells if cell["extra"]]
-              target = min(len(cells), len(active) * 3)
-              by_pos = {(cell["x"], cell["y"]): cell for cell in cells}
-              chosen = {cell["index"]: cell["extra"] for cell in active}
-              offsets = [
-                  (16, 0), (-16, 0), (0, 16), (0, -16),
-                  (16, 16), (16, -16), (-16, 16), (-16, -16),
-                  (32, 0), (-32, 0), (0, 32), (0, -32),
-                  (32, 16), (32, -16), (-32, 16), (-32, -16),
-              ]
-
-              while len(chosen) < target:
-                  changed = False
-                  for seed in active:
-                      for dx, dy in offsets:
-                          cell = by_pos.get((seed["x"] + dx, seed["y"] + dy))
-                          if not cell or cell["index"] in chosen:
-                              continue
-                          chosen[cell["index"]] = seed["extra"]
-                          changed = True
-                          if len(chosen) >= target:
-                              break
-                      if len(chosen) >= target:
-                          break
-                  if not changed:
-                      break
-
-              parts = []
-              last = 0
-              for cell in cells:
-                  match = cell["match"]
-                  parts.append(svg[last:match.start()])
-                  tag = match.group(0)
-                  if cell["index"] in chosen and not cell["extra"]:
-                      tag = tag.replace('class="c"', f'class="c {chosen[cell["index"]]}"', 1)
-                  parts.append(tag)
-                  last = match.end()
-              parts.append(svg[last:])
-              path.write_text("".join(parts))
-
-          amplify(Path("dist/github-snake.svg"))
-          amplify(Path("dist/github-snake-dark.svg"))
-          PY
+      - name: Build amplified growing snake
+        run: python3 .github/scripts/build_profile_snake.py dist
 
       - name: Publish generated SVGs
         uses: crazy-max/ghaction-github-pages@v4
