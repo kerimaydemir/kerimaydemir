@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/hero.svg" alt="Kerim Aydemir" width="100%" />
+  <img src="./assets/hero.gif" alt="Miron Group wolf mark" width="100%" />
 </div>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
@@ -15,13 +15,3 @@
 </div>
 
 <br />
-
-```txt
-I build useful things.
-
-law      -> context, research, judgment
-memory   -> personal systems that do not forget
-product  -> fewer screens, sharper decisions
-```
-
-<img src="./assets/divider.svg" alt="" width="100%" />
