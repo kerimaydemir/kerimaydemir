@@ -3,5 +3,9 @@
 </div>
 
 <div align="center">
-  <img src="./assets/contributions.gif" alt="Animated contribution graph" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kerimaydemir/kerimaydemir/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kerimaydemir/kerimaydemir/output/github-snake.svg" />
+    <img alt="Animated contribution snake" src="https://raw.githubusercontent.com/kerimaydemir/kerimaydemir/output/github-snake-dark.svg" width="100%" />
+  </picture>
 </div>
