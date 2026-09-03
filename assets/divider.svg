@@ -1,23 +1,24 @@
-<svg width="1200" height="80" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated section divider">
+<svg width="1200" height="64" viewBox="0 0 1200 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated section divider">
   <style>
-    .flow { stroke-dasharray: 18 18; animation: move 12s linear infinite; }
-    .dot-a { animation: pulse 2.4s ease-in-out infinite; }
-    .dot-b { animation: pulse 2.4s ease-in-out infinite .8s; }
-    .dot-c { animation: pulse 2.4s ease-in-out infinite 1.6s; }
-    @keyframes move { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -360; } }
-    @keyframes pulse { 0%,100% { opacity: .35; r: 4; } 50% { opacity: 1; r: 7; } }
+    .line { stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 2.8s ease forwards; }
+    .spark { animation: travel 5.8s ease-in-out infinite; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes travel {
+      0%, 14% { transform: translateX(70px); opacity: 0; }
+      28% { opacity: 1; }
+      76% { opacity: 1; }
+      100% { transform: translateX(1058px); opacity: 0; }
+    }
   </style>
   <defs>
-    <linearGradient id="g" x1="0" y1="40" x2="1200" y2="40" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#5EEAD4" stop-opacity="0"/>
-      <stop offset=".22" stop-color="#5EEAD4"/>
-      <stop offset=".5" stop-color="#FACC15"/>
-      <stop offset=".78" stop-color="#38BDF8"/>
-      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    <linearGradient id="g" x1="72" y1="32" x2="1128" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BFA46A" stop-opacity="0"/>
+      <stop offset=".2" stop-color="#BFA46A"/>
+      <stop offset=".5" stop-color="#F4E7C5"/>
+      <stop offset=".8" stop-color="#BFA46A"/>
+      <stop offset="1" stop-color="#BFA46A" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <path class="flow" d="M0 40H1200" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
-  <circle class="dot-a" cx="310" cy="40" r="4" fill="#5EEAD4"/>
-  <circle class="dot-b" cx="600" cy="40" r="4" fill="#FACC15"/>
-  <circle class="dot-c" cx="890" cy="40" r="4" fill="#38BDF8"/>
+  <path class="line" d="M72 32H1128" stroke="url(#g)" stroke-width="1.2" stroke-linecap="round"/>
+  <circle class="spark" cx="0" cy="32" r="3.5" fill="#F4E7C5"/>
 </svg>
